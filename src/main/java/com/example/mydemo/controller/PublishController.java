@@ -60,7 +60,7 @@ public class PublishController {
             return "publish";
         }
         String invalid = TagCache.filterInvalid(tag);
-        if(StringUtils.isBlank(invalid)){
+        if(StringUtils.isNotBlank(invalid)){
             model.addAttribute("error","非法输入标签"+invalid);
             return "publish";
         }
