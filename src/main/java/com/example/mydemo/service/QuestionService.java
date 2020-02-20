@@ -151,7 +151,7 @@ public class QuestionService {
 
         }
     }
-
+    //简易记录观看数（点击以及刷新都会使其+1，以后看看怎么优化吧）
     public void incView(Long id) {
         Question question = new Question();
         question.setId(id);
@@ -169,12 +169,12 @@ public class QuestionService {
         question.setId(queryDTO.getId());
         question.setTag(regexpTag);
 
-        List<Question> questions = questionExtMapper.selectRelated(question);
+        List<Question> questions = questionExtMapper.selectRelated(question);//拿到question  关联列表
         List<QuestionDTO> questionDTOS = questions.stream().map(q -> {
             QuestionDTO questionDTO = new QuestionDTO();
-            BeanUtils.copyProperties(q ,queryDTO);
+            BeanUtils.copyProperties(q ,questionDTO);
             return questionDTO;
-        }).collect(Collectors.toList());
+        }).collect(Collectors.toList());//将Question变为QuestionDTO
         return questionDTOS;
     }
 }

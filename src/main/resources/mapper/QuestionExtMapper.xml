@@ -30,7 +30,7 @@
     </update>
 
     <select id="selectRelated" parameterType="com.example.mydemo.model.Question" resultMap="BaseResultMap">
-        select * from QUESTION where id!=#{id} and tag regexp #{tag}
+        select * from QUESTION where id !=#{id} and tag regexp #{tag}
     </select>
 
     <select id="countBySearch" parameterType="com.example.mydemo.dto.QuestionQueryDTO" resultType="java.lang.Integer">

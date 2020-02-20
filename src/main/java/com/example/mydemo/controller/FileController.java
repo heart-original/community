@@ -13,8 +13,8 @@ public class FileController {
     @ResponseBody
     public FileDTO upload(){
         FileDTO fileDTO = new FileDTO();
-        fileDTO.setSuccess(1);
-        fileDTO.setUrl("");
+        fileDTO.setSuccess(1);//Markdown  success为1时代表图片上传成功
+        fileDTO.setUrl("/image/bagua.jpg");
         return fileDTO;
     }
 }
