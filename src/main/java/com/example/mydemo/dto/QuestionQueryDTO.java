@@ -4,6 +4,11 @@ public class QuestionQueryDTO {
     private String search;
     private Integer page;
     private Integer size;
+    private String tag;
+
+    public String getTag() { return tag; }
+
+    public void setTag(String tag) { this.tag = tag; }
 
     public String getSearch() {
         return search;
